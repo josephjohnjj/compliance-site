@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compliance Roadmaps - Compliance Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="app">
+        <!-- Navigation -->
+        <div class="nav">
+            <h2>Compliance Platform</h2>
+            <div>
+                <a href="checklist.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html">Partners</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <h1>Compliance Roadmaps</h1>
+            <div class="subtitle">Select an area to view structured compliance phases</div>
+
+            <!-- Checklist Buttons -->
+            <button class="checklist-btn" onclick="openRoadmap(1)">Banking Compliance</button>
+            <button class="checklist-btn" onclick="openRoadmap(2)">Real Estate Compliance</button>
+            <button class="checklist-btn" onclick="openRoadmap(3)">Share Compliance</button>
+            <button class="checklist-btn" onclick="openRoadmap(4)">Mutual Fund Compliance</button>
+            <button class="checklist-btn" onclick="openRoadmap(5)">ETF Compliance</button>
+            <button class="checklist-btn" onclick="openRoadmap(6)">Real Estate Compliance (Advanced)</button>
+            <button class="checklist-btn" onclick="openRoadmap(7)">Tax Compliance</button>
+            <button class="checklist-btn" onclick="openRoadmap(8)">Tax Reduction</button>
+
+            <!-- Roadmap View -->
+            <div id="roadmapView" class="hidden">
+                <h1 id="roadmapTitle"></h1>
+                <div class="timeline" id="roadContent"></div>
+                <button class="back-btn" onclick="hideRoadmap()">Back</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
