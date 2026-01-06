@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compliance Checklist with Roadmaps</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --accent: #14b8a6;
+      --bg: #f9fafb;
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --text-dark: #111827;
+      --text-muted: #6b7280;
+      --timeline: #c7d2fe;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      background: var(--bg);
+      margin: 0;
+      color: var(--text-dark);
+      display: flex;
+      justify-content: center;
+      padding: 40px 16px;
+    }
+
+    .app { width: 100%; max-width: 900px; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .nav h2 { font-size: 18px; font-weight: 600; }
+    .nav button { background: none; border: none; font-size: 14px; margin-left: 16px; cursor: pointer; color: var(--primary); font-weight: 500; }
+    .nav button:hover { text-decoration: underline; }
+
+    .container { background: var(--card); padding: 32px; border-radius: 16px; border: 1px solid var(--border); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+
+    h1 { font-size: 22px; text-align: center; margin-bottom: 8px; }
+    .subtitle { text-align: center; font-size: 13px; color: var(--text-muted); margin-bottom: 28px; }
+
+    .checklist-btn { width: 100%; padding: 14px 18px; margin-bottom: 12px; background: #eef2ff; border: 1px solid #e0e7ff; border-radius: 12px; font-size: 14px; font-weight: 500; text-align: left; cursor: pointer; color: var(--primary); display: flex; justify-content: space-between; align-items: center; transition: all 0.2s ease; }
+    .checklist-btn::after { content: "→"; }
+    .checklist-btn:hover { background: #e0e7ff; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(79,70,229,0.15); }
+
+    .hidden { display: none; }
+
+    .timeline { position: relative; margin: 32px 0; padding-left: 40px; }
+    .timeline::before { content: ""; position: absolute; left: 14px; top: 0; bottom: 0; width: 2px; background: var(--timeline); }
+    .step { position: relative; margin-bottom: 28px; }
+    .step:last-child { margin-bottom: 0; }
+    .step::before { content: attr(data-step); position: absolute; left: -2px; top: 14px; width: 28px; height: 28px; background: var(--primary); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; transform: translateX(-50%); }
+    .step-card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; margin-left: 24px; box-shadow: 0 6px 18px rgba(0,0,0,0.05); }
+    .step-card h3 { margin: 0 0 6px; font-size: 15px; font-weight: 600; }
+    .step-card p { margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+    .back-btn { margin-top: 24px; width: 100%; padding: 12px; background: var(--primary); color: #fff; border: none; border-radius: 12px; cursor: pointer; font-weight: 500; }
+
+    .text-block { font-size: 14px; line-height: 1.6; }
+
+    .form-card { border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 20px; text-align: center; }
+    .form-card h3 { margin-top: 0; }
+    .logo-placeholder { height: 100px; border: 2px dashed var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-size: 14px; background: #f9fafb; margin-top: 12px; }
+    .partner-btn { margin-top: 14px; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--primary); background: transparent; color: var(--primary); font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s ease; }
+    .partner-btn:hover { background: var(--primary); color: #fff; }
+
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="nav">
+    <h2>Compliance Platform</h2>
+    <div>
+      <button onclick="showView('checklist')">Home</button>
+      <button onclick="showView('about')">About Us</button>
+      <button onclick="showView('contact')">Partners</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="checklistView">
+      <h1>Compliance Roadmaps</h1>
+      <div class="subtitle">Select an area to view structured compliance phases</div>
+      <button class="checklist-btn" onclick="openRoadmap(1)">Banking Compliance</button>
+      <button class="checklist-btn" onclick="openRoadmap(2)">Real Estate Compliance</button>
+      <button class="checklist-btn" onclick="openRoadmap(3)">Share Compliance</button>
+      <button class="checklist-btn" onclick="openRoadmap(4)">Mutual Fund Compliance</button>
+      <button class="checklist-btn" onclick="openRoadmap(5)">ETF Compliance</button>
+      <button class="checklist-btn" onclick="openRoadmap(6)">Real Estate Compliance (Advanced)</button>
+      <button class="checklist-btn" onclick="openRoadmap(7)">Tax Compliance</button>
+      <button class="checklist-btn" onclick="openRoadmap(8)">Tax Reduction</button>
+    </div>
+
+    <div id="roadmapView" class="hidden">
+      <h1 id="roadmapTitle"></h1>
+      <div class="timeline" id="roadContent"></div>
+      <button class="back-btn" onclick="showView('checklist')">Back</button>
+    </div>
+
+    <div id="aboutView" class="hidden">
+      <h1>About Us</h1>
+      <div class="text-block">
+        We are a compliance-focused platform connecting individuals and businesses with trusted chartered accountants, investment professionals, and banking partners. Our mission is to simplify regulation through clear, structured compliance journeys.
+      </div>
+    </div>
+
+    <div id="contactView" class="hidden">
+      <h1>Our Partners</h1>
+      <div class="form-card">
+        <h3>Chartered Account Partners</h3>
+        <div class="logo-placeholder">Partner Logo</div>
+        <button class="partner-btn">Contact Partner</button>
+      </div>
+      <div class="form-card">
+        <h3>Investment Partners</h3>
+        <div class="logo-placeholder">Partner Logo</div>
+        <button class="partner-btn">Contact Partner</button>
+      </div>
+      <div class="form-card">
+        <h3>Banking Partners</h3>
+        <div class="logo-placeholder">Partner Logo</div>
+        <button class="partner-btn">Contact Partner</button>
+      </div>
+      <div class="form-card">
+        <h3>Legal Partners</h3>
+        <div class="logo-placeholder">Partner Logo</div>
+        <button class="partner-btn">Contact Partner</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const roadmaps = {
+    1: ['Regulatory requirements', 'KYC & AML checks', 'Reporting standards', 'Audit preparation', 'Ongoing monitoring'],
+    2: ['Property regulations', 'Title verification', 'Zoning compliance', 'Transaction reporting', 'Periodic review'],
+    3: ['Shareholding disclosures', 'Trading rules', 'Insider regulations', 'Reporting obligations', 'Compliance review'],
+    4: ['Fund registration', 'Disclosure norms', 'Risk profiling', 'Investor reporting', 'Periodic audits'],
+    5: ['ETF structure rules', 'Index tracking norms', 'Liquidity checks', 'Regulatory filings', 'Performance review'],
+    6: ['Advanced zoning laws', 'Cross-border property rules', 'Tax implications', 'Compliance audits', 'Risk mitigation'],
+    7: ['Income assessment', 'Tax filings', 'Regulatory deadlines', 'Audit readiness', 'Compliance confirmation'],
+    8: ['Tax planning', 'Deductions & exemptions', 'Investment optimisation', 'Legal structuring', 'Savings review']
+  };
+
+  function showView(view) {
+    ['checklistView','roadmapView','aboutView','contactView'].forEach(id => document.getElementById(id).classList.add('hidden'));
+    if (view === 'checklist') document.getElementById('checklistView').classList.remove('hidden');
+    if (view === 'roadmap') document.getElementById('roadmapView').classList.remove('hidden');
+    if (view === 'about') document.getElementById('aboutView').classList.remove('hidden');
+    if (view === 'contact') document.getElementById('contactView').classList.remove('hidden');
+  }
+
+  function openRoadmap(step) {
+    showView('roadmap');
+    document.getElementById('roadmapTitle').textContent = document.querySelectorAll('.checklist-btn')[step - 1].textContent;
+    const road = document.getElementById('roadContent');
+    road.innerHTML = '';
+    roadmaps[step].forEach((item, index) => {
+      const stepDiv = document.createElement('div');
+      stepDiv.className = 'step';
+      stepDiv.setAttribute('data-step', index + 1);
+      stepDiv.innerHTML = `<div class="step-card"><h3>${item}</h3><p>Structured compliance activity required for this phase.</p></div>`;
+      road.appendChild(stepDiv);
+    });
+  }
+</script>
+</body>
+</html>
