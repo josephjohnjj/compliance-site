@@ -4,17 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Compliance Roadmaps - Compliance Platform</title>
+    <title>NRI Compliance Hub - Compliance Roadmaps</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
 </head>
 
 <body>
     <div class="app">
         <!-- Navigation -->
         <div class="nav">
-            <h2>Compliance Platform</h2>
-            <div>
+            <!-- Logo Placeholder -->
+            <div class="logo">
+                <img src="images/logo-placeholder.png" alt="NRI Compliance Hub" />
+                <!-- Replace src with your actual logo when ready -->
+            </div>
+
+            <!-- Navigation links -->
+            <div class="nav-links">
                 <a href="checklist.html">Home</a>
                 <a href="about.html">About Us</a>
                 <a href="partners.html">Partners</a>
@@ -27,20 +32,16 @@
             <div class="subtitle">Select an area to view structured compliance phases</div>
 
             <!-- Checklist Buttons -->
-            <button class="checklist-btn" onclick="openRoadmap(1)">Banking Compliance</button>
-            <button class="checklist-btn" onclick="openRoadmap(2)">Real Estate Compliance</button>
-            <button class="checklist-btn" onclick="openRoadmap(3)">Share Compliance</button>
-            <button class="checklist-btn" onclick="openRoadmap(4)">Mutual Fund Compliance</button>
-            <button class="checklist-btn" onclick="openRoadmap(5)">ETF Compliance</button>
-            <button class="checklist-btn" onclick="openRoadmap(6)">Real Estate Compliance (Advanced)</button>
-            <button class="checklist-btn" onclick="openRoadmap(7)">Tax Compliance</button>
-            <button class="checklist-btn" onclick="openRoadmap(8)">Tax Reduction</button>
-
-            <!-- Roadmap View -->
-            <div id="roadmapView" class="hidden">
-                <h1 id="roadmapTitle"></h1>
-                <div class="timeline" id="roadContent"></div>
-                <button class="back-btn" onclick="hideRoadmap()">Back</button>
+            <div class="checklist-container">
+                <a href="banking.html" target="_blank" class="checklist-btn">Banking Compliance</a>
+                <a href="realestate.html" target="_blank" class="checklist-btn">Real Estate Compliance</a>
+                <a href="share.html" target="_blank" class="checklist-btn">Share Compliance</a>
+                <a href="mutualfund.html" target="_blank" class="checklist-btn">Mutual Fund Compliance</a>
+                <a href="etf.html" target="_blank" class="checklist-btn">ETF Compliance</a>
+                <a href="realestate-adv.html" target="_blank" class="checklist-btn">Real Estate Compliance
+                    (Advanced)</a>
+                <a href="tax.html" target="_blank" class="checklist-btn">Tax Compliance</a>
+                <a href="tax-reduction.html" target="_blank" class="checklist-btn">Tax Reduction</a>
             </div>
         </div>
     </div>
