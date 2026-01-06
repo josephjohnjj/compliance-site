@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NRI Compliance Hub - Banking Compliance</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/banking.css"> <!-- Optional extra styling -->
+</head>
+
+<body>
+    <div class="app">
+        <!-- Navigation -->
+        <div class="nav">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="NRI Compliance Hub" />
+            </div>
+
+            <div class="nav-links">
+                <a href="checklist.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="partners.html">Partners</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container">
+            <h1>Banking Compliance</h1>
+            <div class="subtitle">Select an account type to view compliance details</div>
+
+            <div class="checklist-container">
+                <div>
+                    <div class="checklist-btn" onclick="showAccordion('savings-info')">Savings Account</div>
+                    <div id="savings-info" class="account-info">
+                        <p>
+                            Once a person becomes an NRI, Indian law requires that they cannot continue to
+                            operate a standard resident savings account. This is because regular savings accounts
+                            are meant for residents and assume income is earned and spent locally. NRIs have
+                            foreign income, different tax obligations, and may want to repatriate funds abroad,
+                            so banks must channel them into specialized NRI accounts (NRE, NRO, or FCNR)
+                            that comply with Reserve Bank of India (RBI) regulations. Continuing a normal savings
+                            account would violate RBI rules and create complications in tax and currency
+                            regulations.
+                        </p>
+
+                        <p>
+                            When your residential status changes from resident to non-resident, your existing
+                            regular savings account must be redesignated as an NRO account under FEMA regulations.
+                        </p>
+
+                        <p>
+                            If you don't redesignate your savings account to NRO status after becoming an NRI:
+                        </p>
+
+                        <ul>
+                            <li>You may face a fine up to three times the value involved</li>
+                            <li>Daily penalties for continued non-compliance</li>
+                            <li>Banks may freeze the account or flag it for violations during audits</li>
+                        </ul>
+
+                        <p><strong>Compliance Requirements:</strong></p>
+                        <ul>
+                            <li> Must redesignate their resident savings accounts to NRO status within
+                                90 days of becoming non-resident.</li>
+                            <li> Submit KYC documents proving NRI status: valid passport, visa/work permit, overseas
+                                address proof, PAN card, photographs.</li>
+                            <li> Complete bank-specific forms for account redesignation.</li>
+                            <li> It is also a good idea to close all dormant savings accounts. </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="checklist-btn" onclick="showAccordion('nre-info')">Non-Resident External (NRE) Account
+                    </div>
+                    <div id="nre-info" class="account-info">
+                        <p>
+                            An <strong>NRE (Non-Resident External) account</strong> is a bank account in India
+                            specifically designed for NRIs to manage income earned outside India.
+                        </p>
+
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li><strong>Currency</strong>: Foreign currency deposits are converted and maintaned in INR.
+                            </li>
+                            <li><strong>Repatriation</strong>: Both principal and interest are <strong>fully
+                                    repatriable</strong>
+                                abroad.</li>
+                            <li><strong>Interest</strong>: Tax-free in India.</li>
+                            <li><strong>Joint Holding</strong>: Can be held jointly with another NRI.</li>
+                            <li><strong>Purpose</strong>: Ideal for parking <strong>foreign income</strong> in India for
+                                savings or
+                                investment.</li>
+                        </ul>
+
+                        <p><strong>Compliance Requirements:</strong></p>
+                        <ul>
+                            <li><strong>Eligibility</strong>: Must be an NRI or Person of Indian Origin (PIO) with OCI
+                                card.</li>
+                            <li><strong>KYC Documentation</strong>: Passport, valid visa/work permit/OCI card, overseas
+                                address proof, PAN card, photographs.</li>
+                            <li><strong>FEMA Compliance</strong>: Deposits must come from foreign earnings and NRE
+                                accounts
+                                cannot hold India-sourced income.</li>
+                            <li><strong>Tax Compliance</strong>: Interest earned is tax-free in India, but NRIs must
+                                check
+                                tax filing rules in their country of residence.</li>
+                            <li><strong>Bank Compliance</strong>: Account updates may be required if residential status
+                                changes.</li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+                <div>
+                    <div class="checklist-btn" onclick="showAccordion('nro-info')">Non-Resident Ordinary (NRO) Account
+                    </div>
+                    <div id="nro-info" class="account-info">
+                        <p>
+                            An NRO account is a bank account in India used by
+                            Non-Resident Indians (NRIs) and <strong>Overseas Citizens of India
+                                (OCIs)</strong>
+                            to manage income earned in India</strong>, such as rent, dividends, pension,
+                            business income,
+                            or sale proceeds of property.
+                        </p>
+
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li><strong>Currency</strong>: NRO account can only hold currency in INR.</li>
+                            <li><strong>Repatriation</strong>: Principal and interest can
+                                be repatriated
+                                up to <strong>USD 1 million</strong> per financial year for genuine purposes.
+                            </li>
+                            <li><strong>Joint Holding</strong>: Can be held with another NRI, OCI, or resident Indian
+                                (with bank approval).</li>
+                            <li><strong>Interest</strong>: Subject to Indian tax (TDS) at 30%.</li>
+                            <li><strong>Purpose</strong>: Ideal for managing <strong>India-sourced income</strong>,
+                                paying local bills, and handling Indian investments.</li>
+                        </ul>
+
+                        <p><strong>Compliance Requirements:</strong></p>
+                        <ul>
+                            <li><strong>Eligibility</strong>: Must be an NRI or Person of Indian Origin (PIO) with OCI
+                                card.</li>
+                            <li><strong>KYC Documentation:</strong> Passport, OCI card or valid visa/work permit, PAN
+                                card, overseas address proof, photographs.</li>
+                            <li><strong>FEMA Compliance:</strong> Deposits must come from India-sourced income and
+                                repatriation above USD 1 million requires RBI approval.</li>
+                            <li><strong>Tax Compliance:</strong> Interest earned is taxable in India (TDS applies);
+                                ensure reporting in country of residence if required.</li>
+                            <li><strong>Bank Compliance</strong>: Account updates may be required if residential status
+                                changes.</li>
+                        </ul>
+
+
+                    </div>
+
+                </div>
+
+                <div>
+                    <div class="checklist-btn" onclick="showAccordion('fcnr-info')">
+                        Foreign Currency Non-Resident (FCNR (B)) Account
+                    </div>
+
+                    <div id="fcnr-info" class="account-info">
+                        <p>
+                            An <strong>FCNR (B)</strong> account is a fixed deposit account in India
+                            that <strong>NRIs and OCIs</strong> can maintain in foreign currency to park their earnings
+                            without being exposed to exchange rate fluctuations.
+                        </p>
+
+                        <p><strong>Key Features:</strong></p>
+                        <ul>
+                            <li><strong>Currency:</strong> Maintained in foreign currency.</li>
+                            <li><strong>Account Type:</strong> Fixed Deposit only (minimum 1 year, maximum 5 years).
+                            </li>
+                            <li><strong>Repatriation:</strong> Both principal and interest are <strong>fully
+                                    repatriable</strong>.</li>
+                            <li><strong>Interest:</strong> <strong>Tax-free in India</strong>.</li>
+                            <li><strong>Deposit Source:</strong> Only from <strong>foreign earnings</strong>.</li>
+                        </ul>
+
+                        <p><strong>Compliance Requirements:</strong></p>
+                        <ul>
+                            <li><strong>Eligibility:</strong> Must be an NRI or OCI.</li>
+                            <li><strong>KYC Documentation:</strong> Passport, valid visa/work permit/OCI card, overseas
+                                address proof, PAN card, photographs.</li>
+                            <li><strong>FEMA Compliance:</strong> Deposits must come from foreign earnings only and are
+                                fully repatriable under FEMA regulations.</li>
+                            <li><strong>Bank Compliance:</strong> Declaration of NRI/OCI status and periodic updates may
+                                be required.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- JS -->
+    <script src="js/banking.js"></script>
+</body>
+
+</html>

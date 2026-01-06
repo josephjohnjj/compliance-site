@@ -1,0 +1,48 @@
+.checklist-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.accordion {
+    margin-bottom: 12px;
+}
+
+.checklist-btn {
+    background: #f5f7fa;
+    padding: 14px 18px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Arrow */
+.checklist-btn::after {
+    content: "▸";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.25s ease;
+}
+
+.checklist-btn.active::after {
+    transform: translateY(-50%) rotate(90deg);
+}
+
+.account-info {
+    display: none;
+    padding: 18px;
+    background: #ffffff;
+    border-left: 3px solid #4a6cf7;
+    margin-top: 6px;
+    border-radius: 0 0 6px 6px;
+}
+
+.account-info.show {
+    display: block;
+}
+
+.account-info ul {
+    padding-left: 18px;
+}
